@@ -1,0 +1,32 @@
+context: local
+contexts:
+    local:
+        endpoints:
+            - 192.168.250.1
+            - 192.168.250.2
+            - 192.168.250.3
+        nodes:
+            - 192.168.250.1
+        ca: ca_dummy
+        crt: crt_dummy
+        key: key_dummy
+    dev:
+        endpoints:
+            - 192.168.251.1
+            - 192.168.251.2
+            - 192.168.251.3
+        nodes:
+            - 192.168.251.1
+        ca: dev_ca_dummy
+        crt: dev_crt_dummy
+        key: dev_key_dummy
+    prod:
+        endpoints:
+            - 192.168.252.1
+            - 192.168.252.2
+            - 192.168.252.3
+        nodes:
+            - 192.168.252.1
+        ca: prod_ca_dummy
+        crt: prod_crt_dummy
+        key: prod_key_dummy
