@@ -1,0 +1,37 @@
+version: "3"
+
+env:
+  ENV: dev
+  PACKAGES: ./...
+
+dotenv: [".env", "{{.ENV}}/.env."]
+
+tasks:
+  init:
+    desc: initialize requirements
+    cmds:
+      - go mod download
+      - go install github.com/dkorunic/betteralign/cmd/betteralign@latest
+      - go install mvdan.cc/gofumpt@latest
+  build:
+    desc: Build in production mode
+    cmds:
+      - goreleaser release --clean
+  build-snapshots:
+    desc: Build in snapshot mode
+    cmds:
+      - goreleaser release --clean --snapshot
+  lint:
+    desc: lint the project
+    cmds:
+      - golangci-lint run $PACKAGES
+      - betteralign $PACKAGES
+      - gofumpt -l -w $PACKAGES
+  dev:
+    desc: execute application code
+    cmds:
+      - go run cmd/talosctx/main.go {{.CLI_ARGS}}
+  tests:
+    desc: launch tests
+    cmds:
+      - go test -cover $PACKAGES
