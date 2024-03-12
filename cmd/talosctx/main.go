@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/lederniermetre/talosctx/internal/cmdutil"
+	"github.com/lederniermetre/talosctx/internal/printer"
 	"github.com/lederniermetre/talosctx/internal/talosconfig"
 	"gitlab.com/greyxor/slogor"
 	"gopkg.in/yaml.v3"
@@ -21,16 +22,17 @@ func main() {
 
 	cmdutil.SetLogger(debug)
 
-	yamlData, _, err := talosconfig.GetTalosConfigContent()
+	yamlData, path, err := talosconfig.GetTalosConfigContent()
 	if err != nil {
 		slog.Error("Error when get content", slogor.Err(err))
 		os.Exit(1)
 	}
 
+	var config talosconfig.Talosconfig
+	err = yaml.Unmarshal(yamlData, &config)
+
 	if getContext {
 		slog.Debug("Retrive only current context")
-		var config talosconfig.Talosconfig
-		err = yaml.Unmarshal(yamlData, &config)
 		if err != nil {
 			slog.Error("Error when get content", slogor.Err(err))
 			os.Exit(1)
@@ -38,6 +40,24 @@ func main() {
 
 		fmt.Printf("%+v", config.Context)
 	} else {
-		fmt.Printf("%s\n", yamlData)
+		context, err := printer.SelectContext(config.Contexts)
+		if err != nil {
+			slog.Error("Can not select context", slogor.Err(err))
+			os.Exit(1)
+		}
+
+		config.Context = context
+
+		data, err := yaml.Marshal(&config)
+		if err != nil {
+			slog.Error("Can not marshal yamlData", slogor.Err(err))
+			os.Exit(1)
+		}
+
+		err = talosconfig.WritetalosConfig(path, data)
+		if err != nil {
+			slog.Error("Can not write", slogor.Err(err))
+			os.Exit(1)
+		}
 	}
 }

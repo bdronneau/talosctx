@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/lederniermetre/talosctx/internal/env"
+	"github.com/rs/xid"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -56,4 +57,31 @@ func TestGetTalosConfigHome(t *testing.T) {
 
 	_, _, err = GetTalosConfigContent()
 	assert.ErrorContains(t, err, "no such file or directory")
+}
+
+func TestWritetalosConfig(t *testing.T) {
+	guid := xid.New()
+	tmpDir, err := os.MkdirTemp("", fmt.Sprintf("%s_%s", "talosctx_test", guid.String()))
+	if err != nil {
+		t.Fatalf("can not create temporary directory: %v", err)
+	}
+	defer os.RemoveAll(tmpDir)
+
+	expectedData := []byte("test data")
+	expecteFilePath := tmpDir + "/testfile"
+	expecteFileMode := os.FileMode(0o600)
+
+	err = WritetalosConfig(expecteFilePath, expectedData)
+	assert.ErrorContains(t, err, "no such file or directory")
+
+	err = os.WriteFile(expecteFilePath, expectedData, expecteFileMode)
+	assert.NoError(t, err)
+
+	actualFile, err := os.Stat(expecteFilePath)
+	assert.NoError(t, err)
+	assert.Equal(t, expecteFileMode, actualFile.Mode())
+
+	actualData, err := os.ReadFile(expecteFilePath)
+	assert.NoError(t, err)
+	assert.Equal(t, expectedData, actualData)
 }

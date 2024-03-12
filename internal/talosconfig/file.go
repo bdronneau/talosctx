@@ -41,3 +41,17 @@ func getTalosConfigHome() (string, error) {
 
 	return filepath.Join(homeDir, ".talos", "config"), nil
 }
+
+func WritetalosConfig(path string, data []byte) error {
+	info, err := os.Stat(path)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(path, data, info.Mode())
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
