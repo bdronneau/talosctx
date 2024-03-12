@@ -11,8 +11,9 @@ tasks:
     desc: initialize requirements
     cmds:
       - go mod download
+      - go install go.uber.org/nilaway/cmd/nilaway@latest
       - go install github.com/dkorunic/betteralign/cmd/betteralign@latest
-      - go install mvdan.cc/gofumpt@latest
+      - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
   build:
     desc: Build in production mode
     cmds:
@@ -26,7 +27,7 @@ tasks:
     cmds:
       - golangci-lint run $PACKAGES
       - betteralign $PACKAGES
-      - gofumpt -l -w $PACKAGES
+      - nilaway $PACKAGES
   dev:
     desc: execute application code
     cmds:
