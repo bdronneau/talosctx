@@ -38,7 +38,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Printf("%+v", config.Context)
+		fmt.Printf("%s", config.Context)
 	} else {
 		context, err := printer.SelectContext(config.Contexts)
 		if err != nil {
