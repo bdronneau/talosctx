@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/lederniermetre/talosctx/compare/v1.0.0...v1.0.1) (2024-03-13)
+
+
+### Bug Fixes
+
+* **context:** wrong format for current context ([413f7cd](https://github.com/lederniermetre/talosctx/commit/413f7cdb089d17189b4b30b1611b2db40f692634))
+
 ## 1.0.0 (2024-03-12)
 
 
