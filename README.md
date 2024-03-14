@@ -31,3 +31,25 @@ talosctx
 # Get current context (PS1 usage)
 talosctx --get-context
 ```
+
+## Development
+
+### Requirements
+
+- [goreleaser](https://goreleaser.com/) for build snapshot version
+- [Task](https://taskfile.dev/) for devEx
+
+### Get started
+
+```bash
+task init
+task tests
+```
+
+### Help
+
+In order to retrieve all commands
+
+```bash
+task -l
+```
