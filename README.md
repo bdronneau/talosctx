@@ -14,3 +14,20 @@ go install github.com/lederniermetre/talosctx/cmd/talosctx@latest
 ```
 
 or check [binaries release](https://github.com/lederniermetre/talosctx/releases)
+
+## Usage
+
+## Configuration
+
+`talosctx` use TALOSCONFIG environment variable or fallback to `$HOME/.talos/config` to retrieve talosconfig file and contextes.
+
+### Examples
+
+```bash
+
+# Display interactive select between contexts
+talosctx
+
+# Get current context (PS1 usage)
+talosctx --get-context
+```
