@@ -1,6 +1,6 @@
 # `talosctx`: Get More Out of Talos
 
-![Latest GitHub release](https://img.shields.io/github/release/lederniermetre/talosctx.svg) [![CI](https://github.com/lederniermetre/talosctx/actions/workflows/ci.yaml/badge.svg)](https://github.com/lederniermetre/talosctx/actions/workflows/ci.yaml)
+![Latest GitHub release](https://img.shields.io/github/release/lederniermetre/talosctx.svg) [![CI](https://github.com/lederniermetre/talosctx/actions/workflows/ci.yaml/badge.svg)](https://github.com/lederniermetre/talosctx/actions/workflows/ci.yaml) [![Go Report Card](https://goreportcard.com/badge/github.com/lederniermetre/talosctx)](https://goreportcard.com/report/github.com/lederniermetre/talosctx)
 
 Based on the work done by kubectx, talosctx aims to assist you in your daily actions on [Talos](https://www.talos.dev/) clusters.
 
