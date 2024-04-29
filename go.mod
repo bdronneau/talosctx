@@ -7,7 +7,7 @@ require (
 	github.com/pterm/pterm v0.12.79
 	github.com/rs/xid v1.5.0
 	github.com/stretchr/testify v1.9.0
-	gitlab.com/greyxor/slogor v1.2.7
+	gitlab.com/greyxor/slogor v1.2.8
 	gopkg.in/yaml.v3 v3.0.1
 )
 
