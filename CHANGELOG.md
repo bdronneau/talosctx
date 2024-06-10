@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/lederniermetre/talosctx/compare/v1.0.1...v1.0.2) (2024-06-10)
+
+
+### Bug Fixes
+
+* **goreleaser:** bump to v2 ([9e89bbf](https://github.com/lederniermetre/talosctx/commit/9e89bbf79d5326f6c878a9a0f614d8ef842b01e5))
+
 ## [1.0.1](https://github.com/lederniermetre/talosctx/compare/v1.0.0...v1.0.1) (2024-03-13)
 
 
