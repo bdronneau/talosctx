@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 before:
   hooks:
@@ -28,4 +28,4 @@ archives:
         format: zip
 
 changelog:
-  skip: true
+  disable: true
