@@ -1,13 +1,15 @@
-# `talosctx`: Get More Out of Talos
+# `talosctx`: Get More Out of Talos contexts
 
 ![Latest GitHub release](https://img.shields.io/github/release/bdronneau/talosctx.svg) [![CI](https://github.com/bdronneau/talosctx/actions/workflows/ci.yaml/badge.svg)](https://github.com/bdronneau/talosctx/actions/workflows/ci.yaml) [![Go Report Card](https://goreportcard.com/badge/github.com/bdronneau/talosctx)](https://goreportcard.com/report/github.com/bdronneau/talosctx)
 
-Based on the work done by kubectx, talosctx aims to assist you in your daily actions on [Talos](https://www.talos.dev/) clusters.
+**talosctx** is a tool for make easy switch between [Talos](https://www.talos.dev/) contexts. This tool is based on [kubectx/kubens](https://github.com/ahmetb/kubectx) work.
 
 ## Features
 
-- **Built with Golang**
 - **TUI**: [pterm](https://github.com/pterm/pterm)
+- **Built with Golang**
+
+![](./img/demo.gif)
 
 ## Installation
 
@@ -15,13 +17,13 @@ Based on the work done by kubectx, talosctx aims to assist you in your daily act
 go install github.com/bdronneau/talosctx/cmd/talosctx@latest
 ```
 
-or check [binaries release](https://github.com/bdronneau/talosctx/releases)
+or check [binaries releases](https://github.com/bdronneau/talosctx/releases)
 
 ## Usage
 
 ## Configuration
 
-`talosctx` use TALOSCONFIG environment variable or fallback to `$HOME/.talos/config` to retrieve talosconfig file and contextes.
+**talosctx** use `TALOSCONFIG` environment variable or fallback to `$HOME/.talos/config` to retrieve talosconfig file and contextes.
 
 ### Examples
 
@@ -30,7 +32,7 @@ or check [binaries release](https://github.com/bdronneau/talosctx/releases)
 # Display interactive select between contexts
 talosctx
 
-# Get current context (PS1 usage)
+# Get current context (PS1 usage, no return line)
 talosctx --get-context
 ```
 
