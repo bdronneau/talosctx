@@ -5,7 +5,7 @@ import (
 
 	"atomicgo.dev/keyboard"
 	"atomicgo.dev/keyboard/keys"
-	"github.com/lederniermetre/talosctx/internal/talosconfig"
+	"github.com/bdronneau/talosctx/internal/talosconfig"
 	"github.com/stretchr/testify/assert"
 )
 

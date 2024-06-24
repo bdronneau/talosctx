@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/lederniermetre/talosctx/internal/cmdutil"
-	"github.com/lederniermetre/talosctx/internal/printer"
-	"github.com/lederniermetre/talosctx/internal/talosconfig"
+	"github.com/bdronneau/talosctx/internal/cmdutil"
+	"github.com/bdronneau/talosctx/internal/printer"
+	"github.com/bdronneau/talosctx/internal/talosconfig"
 	"gitlab.com/greyxor/slogor"
 	"gopkg.in/yaml.v3"
 )

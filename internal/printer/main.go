@@ -1,7 +1,7 @@
 package printer
 
 import (
-	"github.com/lederniermetre/talosctx/internal/talosconfig"
+	"github.com/bdronneau/talosctx/internal/talosconfig"
 	"github.com/pterm/pterm"
 )
 

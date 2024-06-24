@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/lederniermetre/talosctx/internal/env"
+	"github.com/bdronneau/talosctx/internal/env"
 )
 
 var getHomeDir = os.UserHomeDir

@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/lederniermetre/talosctx/internal/env"
+	"github.com/bdronneau/talosctx/internal/env"
 	"github.com/rs/xid"
 	"github.com/stretchr/testify/assert"
 )

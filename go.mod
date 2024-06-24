@@ -1,4 +1,4 @@
-module github.com/lederniermetre/talosctx
+module github.com/bdronneau/talosctx
 
 go 1.22.0
 
