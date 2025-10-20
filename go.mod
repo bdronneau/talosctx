@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	atomicgo.dev/keyboard v0.2.9
-	github.com/pterm/pterm v0.12.81
+	github.com/pterm/pterm v0.12.82
 	github.com/rs/xid v1.6.0
 	github.com/stretchr/testify v1.11.1
 	gopkg.in/yaml.v3 v3.0.1
