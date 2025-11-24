@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/bdronneau/talosctx/compare/v1.0.2...v1.1.0) (2025-11-24)
+
+
+### Features
+
+* **golang:** bump version to 1.25 ([25bae43](https://github.com/bdronneau/talosctx/commit/25bae43007b424b9a4149d7fb162315463cb4b30))
+
 ## [1.0.2](https://github.com/bdronneau/talosctx/compare/v1.0.1...v1.0.2) (2024-06-10)
 
 ### Bug Fixes
