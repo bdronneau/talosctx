@@ -7,7 +7,6 @@ _.file = [".env"]
 go = "1.26"
 goreleaser = "latest"
 "aqua:golangci/golangci-lint" = "latest"
-"go:go.uber.org/nilaway/cmd/nilaway" = "latest"
 "go:github.com/dkorunic/betteralign/cmd/betteralign" = "latest"
 
 [tasks.build]
@@ -23,7 +22,7 @@ description = "lint the project"
 run = [
   "golangci-lint run $PACKAGES",
   "betteralign $PACKAGES",
-  "nilaway $PACKAGES",
+  "go run go.uber.org/nilaway/cmd/nilaway@latest $PACKAGES",
 ]
 
 [tasks.dev]
