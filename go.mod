@@ -1,6 +1,6 @@
 module github.com/bdronneau/talosctx
 
-go 1.25.0
+go 1.26.0
 
 require (
 	atomicgo.dev/keyboard v0.2.10
