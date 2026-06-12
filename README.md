@@ -40,14 +40,13 @@ talosctx --get-context
 
 ### Requirements
 
-- [goreleaser](https://goreleaser.com/) for build snapshot version
-- [Task](https://taskfile.dev/) for devEx
+- [mise](https://mise.jdx.dev/) to manage toolchain and tasks (installs goreleaser, golangci-lint, etc.)
 
 ### Get started
 
 ```bash
-task init
-task tests
+mise install
+mise run tests
 ```
 
 ### Help
@@ -55,5 +54,5 @@ task tests
 In order to retrieve all commands
 
 ```bash
-task -l
+mise tasks
 ```

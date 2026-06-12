@@ -17,17 +17,11 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Set up Go
-        uses: actions/setup-go@v6
-        with:
-          go-version-file: "go.mod"
-      - name: Install Task
-        uses: arduino/setup-task@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup mise
+        uses: jdx/mise-action@v2
       - name: Tests
         run: |
-          task tests
+          mise run tests
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v7
         with:

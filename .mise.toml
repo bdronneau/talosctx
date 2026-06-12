@@ -1,0 +1,35 @@
+[env]
+ENV = "dev"
+PACKAGES = "./..."
+_.file = [".env"]
+
+[tools]
+go = "1.26"
+goreleaser = "latest"
+"aqua:golangci/golangci-lint" = "latest"
+"go:go.uber.org/nilaway/cmd/nilaway" = "latest"
+"go:github.com/dkorunic/betteralign/cmd/betteralign" = "latest"
+
+[tasks.build]
+description = "Build in production mode"
+run = "goreleaser release --clean"
+
+[tasks."build-snapshots"]
+description = "Build in snapshot mode"
+run = "goreleaser release --clean --snapshot"
+
+[tasks.lint]
+description = "lint the project"
+run = [
+  "golangci-lint run $PACKAGES",
+  "betteralign $PACKAGES",
+  "nilaway $PACKAGES",
+]
+
+[tasks.dev]
+description = "execute application code"
+run = "go run cmd/talosctx/main.go"
+
+[tasks.tests]
+description = "launch tests"
+run = "go test -cover $PACKAGES"
