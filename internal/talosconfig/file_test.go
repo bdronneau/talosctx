@@ -65,7 +65,7 @@ func TestWritetalosConfig(t *testing.T) {
 	if err != nil {
 		t.Fatalf("can not create temporary directory: %v", err)
 	}
-	defer os.RemoveAll(tmpDir)
+	defer func() { _ = os.RemoveAll(tmpDir) }()
 
 	expectedData := []byte("test data")
 	expecteFilePath := tmpDir + "/testfile"
